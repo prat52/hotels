@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const mongourl = 'mongodb://localhost:27017/navinDB'; 
+
+const mongourl = process.env.DB_URL;
 mongoose.connect(mongourl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
