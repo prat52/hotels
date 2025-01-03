@@ -3,10 +3,10 @@ require('dotenv').config();
 
 
 const mongourl = process.env.DB_URL;
-mongoose.connect(mongourl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect(mongourl)
+    .then(() => console.log('Database connected successfully'))
+    .catch(err => console.error('Database connection error:', err));
+
 
 const db = mongoose.connection;
 
